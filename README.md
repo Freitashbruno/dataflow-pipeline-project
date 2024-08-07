@@ -33,14 +33,14 @@ Este repositório contém um projeto de pipeline de dados utilizando Google Clou
     python bqscriptv2.py --input_file input_data.txt --output_path gs://seu_bucket/output --project seu_projeto --region sua_regiao --temp_location gs://seu_bucket/temp --runner DirectRunner
     ```
 
-3. **Desplegar e Executar no Google Cloud Dataflow**:
+3. **Implantar e Executar no Google Cloud Dataflow**:
     ```sh
     gcloud dataflow jobs run nome_do_job --gcs-location gs://seu_bucket/template --region sua_regiao
     ```
 
 ## Automatização com Cloud Functions e Cloud Scheduler
 
-### Desplegar Cloud Function
+### Implantar Cloud Function
 
 ```sh
 gcloud functions deploy run_dataflow \
