@@ -50,3 +50,21 @@ gcloud functions deploy run_dataflow \
   --source gs://seu_bucket/abds.zip \
   --project seu_projeto \
   --region sua_regiao
+
+Agendar com Cloud Scheduler
+
+gcloud scheduler jobs create http dataflow-job-schedule \
+  --schedule "0 */1 * * *" \
+  --uri "https://sua_regiao-seu_projeto.cloudfunctions.net/run_dataflow" \
+  --http-method GET \
+  --oidc-service-account-email "gserviceaccount@seu_projeto.iam.gserviceaccount.com" \
+  --oidc-token-audience "https://sua_regiao-seu_projeto.cloudfunctions.net/run_dataflow" \
+  --location sua_regiao
+
+Contribuição
+Sinta-se à vontade para contribuir com melhorias e novas funcionalidades.
+
+Licença
+Este projeto está licenciado sob os termos da licença MIT.
+
+
